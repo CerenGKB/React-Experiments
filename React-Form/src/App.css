@@ -1,0 +1,115 @@
+*{
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+}
+
+#root{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+
+
+
+#allCss{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background-color:#FFFFFF;
+  padding: 10px;
+}
+
+form{
+  margin: auto;
+  padding: 10px;
+  width: auto;
+  height: auto;
+
+}
+
+#ageCheckbox{
+  height: auto;
+}
+
+#fieldSetStyle{
+  display: flex;
+  flex-direction: column;
+}
+
+#radioBox{
+  display: flex;
+  flex-direction: row;
+}
+
+#unemployed,
+#part-time,
+#full-time{
+  height: auto;
+}
+
+legend{
+  margin: auto;
+  font-size: 18px;
+}
+
+#unempLabel{
+  font-size: 16px;
+}
+
+
+.text{
+  font-size: 24px;
+  align-self: center;
+}
+
+#ageCheckBoxall{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+input{
+  border: none;
+  font-size: 18px;
+  padding: 5px;
+  margin: 5px;
+  height: 30px;
+  border-bottom: 2px solid black;
+}
+
+textarea{
+  resize: none;
+  width: auto;
+  height: 70px;
+  margin: 5px 0;
+  font-size: 17px;
+
+}
+
+#formCss{
+  display: flex;
+  flex-direction: column;
+}
+
+#favColorAll{
+  margin: 5px 0;
+  font-size: 17px;
+}
+
+#favColor{
+  margin-top: 5px;
+}
+
+button{
+  margin-top: 10px;
+  width: 60%;
+  align-self: center;
+  height: 30px;
+}
