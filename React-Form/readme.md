@@ -1,0 +1,1 @@
+Trying to create a simple form by using react to see what are the changes between vanilla js and react ![simpleform](https://github.com/CerenGKB/React-Experiments/assets/47979970/0cfaec4c-4ad7-4cf7-8bd7-b009576a1aff)
