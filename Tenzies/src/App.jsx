@@ -4,11 +4,11 @@ import './App.css'
 function App() {
 
   return (
-<div className="container">
+<main>
    <div className="game">
    <Die />
    </div>
-</div>
+   </main>
   )
 }
 

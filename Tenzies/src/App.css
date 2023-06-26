@@ -1,11 +1,10 @@
 *{
   margin: 0;
+  box-sizing: border-box;
   padding: 0;
 }
 
-/*App.jsx section */
-
-.container{
+body{
   background-color: #0B2434;
   display:flex;
   justify-content:center;
@@ -13,17 +12,33 @@
   width: 100vw;
   height: 100vh;
 
-
 }
+
+
+main{
+  background-color: #F5F5F5;
+  height: 400px;
+  max-width: 800px;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/*App.jsx section */
+
 
 .game{
   width: 50%;
   height: 50%;
   max-width: 1000px;
   max-height: 800px;
-  vertical-align: middle;
-  background-color: #E5E5E5;
+  background-color: #F5F5F5;
   border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 
@@ -31,10 +46,21 @@
 
 
 .diceContainer{
-  background-color: purple;
+  background-color: #F5F5F5;
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(5,15%);
-  grid-template-rows:  repeat(2,15%);
+  grid-template: 50px 50px / repeat(5,1fr);
+  
+  
+}
+
+.numBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
 }
