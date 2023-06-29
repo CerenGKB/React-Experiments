@@ -7,16 +7,23 @@ function App() {
 
   const [dice, setDice] = React.useState(allNewDice())
 
-
+  
   function allNewDice(){
     const newDice = []
     for(let i= 0 ; i < 10 ; i++){
-      newDice.push(Math.ceil(Math.random() * 6))
+      newDice.push({
+       value: (Math.ceil(Math.random() * 6)),
+       isHeld: false
+      })
     }
     return newDice
   }
   
-  const diceElements = dice.map(die => <Die value={die} />)
+  function rollDice(){
+    setDice(allNewDice())
+  }
+  
+  const diceElements = dice.map(die => <Die value={die.value} />)
     
 
   return (
@@ -24,7 +31,7 @@ function App() {
     <div className="game">
     {diceElements}
     </div>
-    <button onClick={allNewDice}>Roll</button>
+    <button onClick={rollDice}>Roll</button>
    </main>
   )
 }
