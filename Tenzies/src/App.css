@@ -25,6 +25,20 @@ main{
   flex-direction: column;
   justify-content: center;
 }
+
+.title{
+  margin: 0;
+  align-self: center;
+  font-size: 40px;
+}
+
+.instructions {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  margin: 15px 0;
+  text-align: center;
+}
+
 /*App.jsx section */
 
 

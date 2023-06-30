@@ -2,12 +2,26 @@ import React from "react"
 import Die from "/src/components/Die.jsx"
 import './App.css'
 import {nanoid} from "nanoid"
+import Confetti from 'react-confetti'
+
+
 
 function App() {
 
   const [dice, setDice] = React.useState(allNewDice())
 
-  
+  const [tenzies, setTenzies] = React.useState(false)
+   
+
+  React.useEffect(() => {
+    const allHeld = dice.every(die => die.isHeld ===true)
+    const firstValue = dice[0].value
+    const allSameValue = dice.every(die => die.value === firstValue)
+    if(allHeld && allSameValue){
+      setTenzies(true)
+    }
+  }, [dice])
+
   function generateNewDie(){
     return {
       value: Math.ceil(Math.random() * 6),
@@ -25,20 +39,17 @@ function App() {
     return newDice
   }
   
-/*   if there is specific number with isHeld:true state roll other
-boxes' numbers
-     We need to reach their id property
-     var olan array i map 
-     eger isheld varsa skip 
-
-   */
-
   function rollDice(){
+    if(!tenzies){
     setDice(oldDice => oldDice.map(die => {
       return die.isHeld ? 
       die:
       generateNewDie()
     }))
+  }else {
+    setTenzies(false)
+    setDice(allNewDice)
+  }
   }
   
   function hold(id){
@@ -64,14 +75,24 @@ boxes' numbers
   holdDice={() => hold(die.id)}
   />)
   
- 
+  const width = document.getElementsByClassName('game').clientWidth
+  const height = document.getElementsByClassName('game').clientHeight
+
 
   return (
   <main>
+     {tenzies && <Confetti
+     width={width}
+     height={height}
+     />}
+      <h1 className="title">Tenzies</h1>
+            <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
     <div className="game">
     {diceElements}
     </div>
-    <button onClick={rollDice}>Roll</button>
+    <button onClick={rollDice}>
+     {tenzies ? "New Game" : "Roll"}
+      </button>
    </main>
   )
 }
