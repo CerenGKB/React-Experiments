@@ -63,7 +63,7 @@ main{
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background-color: white;
+ /*  background-color: white; */
   
 }
 
@@ -94,3 +94,4 @@ button{
 button:active{
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
+
