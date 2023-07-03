@@ -1,0 +1,53 @@
+*{
+    margin: 0 auto;
+    background: #F5F7FB;
+}
+
+
+main{
+    background-image: url('images/blob 5blob2.png'),url('images/blob 5blob.png');
+    background-position: right 0 top 0 , bottom 0 left 0;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+ 
+}
+
+
+
+
+.title{
+    color: #293264;
+    text-align: center;
+    font-size: 31.25px;
+    font-family: Karla;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 20px;
+}
+
+.description{
+    color: #293264;
+    text-align: center;
+    font-size: 16px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+button{
+    width: 193px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #4D5B9E;
+    margin: 20px;
+}
