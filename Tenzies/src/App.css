@@ -35,7 +35,8 @@ main{
 .instructions {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  margin: 15px 0;
+  margin: 15px 5px;
+  padding: 0 50px;
   text-align: center;
 }
 
@@ -43,19 +44,15 @@ main{
 
 
 .game{
-/*   width:60%;
-  height: 60%;
-  max-width: 1000px;
-  max-height: 800px;
-  background-color: #F5F5F5;
-  border-radius: 5px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; */
   display: grid;
-  grid-template: auto auto / repeat(5, 1fr);
-  gap: 20px;
+  grid-template: 50% 50% / repeat(5, 1fr);
+  gap: 10px;
+  margin-left: 30px;
+  margin-right: 10px;
+}
+
+.instructions{
+  width: 500px;
 }
 
 
@@ -63,14 +60,8 @@ main{
 
 
 .diceContainer{
-/*   background-color: #F5F5F5;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template: 100px 100px / repeat(5,1fr);
-  gap:20px; */
-  height: 50px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   display: flex;
@@ -105,6 +96,13 @@ button{
   margin-top: 20px;
 }
 
+
+@media only screen and (min-width: 768px) {
+  button{
+    width: 120px;
+    height: 50px;
+  }
+}
 button:active{
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
