@@ -14,13 +14,19 @@ function App() {
   }
 
   return (
-    <main>
-    {!displayComponent && <div className="title">Quizzical</div>}
-    {!displayComponent && <div className="description">Quizzical is a trivia game where you try to 5 questions at a time</div>}
-    <Button onStateChange={handleState}>Start</Button>
-    {displayComponent && <QuizPart/>}
-    </main>
+    <div>
+    {!displayComponent && <main>
     
+    <div className="title">Quizzical</div>
+   <div className="description">Quizzical is a trivia game where you try to 5 questions at a time</div>
+    <Button onStateChange={handleState}>Start</Button>
+      
+    
+    </main>}
+    <div className='questions'>
+    {displayComponent && <QuizPart/>}
+    </div>
+    </div>
   )
 }
 
