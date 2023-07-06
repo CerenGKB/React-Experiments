@@ -6,13 +6,19 @@ import Button  from "./components/Button.jsx"
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const [displayComponent, setDisplayComponent] = useState(false)
+
+  function handleState(newState){
+    setDisplayComponent(newState)
+  }
 
   return (
     <main>
-    <div className="title">Quizzical</div>
-    <div className="description">Quizzical is a trivia game where you try to 5 questions at a time</div>
-    <Button>Start Game</Button>
+    {!displayComponent && <div className="title">Quizzical</div>}
+    {!displayComponent && <div className="description">Quizzical is a trivia game where you try to 5 questions at a time</div>}
+    <Button onStateChange={handleState}>Start</Button>
+    {displayComponent && <QuizPart/>}
     </main>
     
   )
