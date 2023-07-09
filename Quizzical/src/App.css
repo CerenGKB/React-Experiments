@@ -95,6 +95,7 @@ button{
     border-radius: 7.942px;
     border: 0.794px solid #4D5B9E;
     padding: 5px 15px;
+    width: auto;
 }
 
 .question{

@@ -7,6 +7,9 @@ export default function QuizPart({questions,setQuestions}){
     const [options,setOptions] =useState()
     const [currentQuestion,setCurrentQuestion] = useState(0)
 
+    const [selected,setSelected] = useState()
+    const {error,setError} = useState(false)
+
     useEffect(()=>{
         console.log(questions)
 
@@ -25,33 +28,19 @@ export default function QuizPart({questions,setQuestions}){
 
     return  (
         <div className='questions=part'>
+           
             <div className="question-block">
-                <div className="question">Question  </div>
+                <div className="question">{questions[currentQuestion].question}  </div>
                 <div className="answer-block">
-                <div className="q1">Answer </div>
-                <div className="q1">Answer</div>
-                <div className="q1">Answer</div>
-                <div className="q1">Answer</div>
-                <div className="q1">Answer</div>
+                    {options && 
+                    options.map(i=>(
+                        <button className="q1">{i} </button>
+                    ))}
+               
                 </div>
             </div>
             <hr/>
-            <div className="question-block">
-            <div className="question">Question</div>
-            </div>
-            <hr/>
-            <div className="question-block">
-            <div className="question">Question</div>
-            </div>
-            <hr/>
-            <div className="question-block">
-            <div className="question">Question</div>
-            </div>
-            <hr/>
-            <div className="question-block">
-            <div className="question">Question</div>
-            </div>
-            <hr/>
+           
             <Button>Check Answers</Button>
         </div>
     ) 
