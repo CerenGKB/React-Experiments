@@ -56,33 +56,36 @@ button{
     margin: 20px;
 }
 
-.questions{
-    margin: 0;
+
+.mainComp{
     width: 100vw;
     height: 100vh;
     background-image: url('images/blob 5blob2.png'),url('images/blob 5blob.png');
     background-position: right 0 top 0 , bottom 0 left 0;
     background-repeat: no-repeat;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-.question-block{
+.questions{
+    margin: 0;
+    width:800px;
+    height: 800px;
     display: flex;
     flex-direction: column;
-    margin: 20px 0;
+    justify-content: flex-start;
+
 }
 
-
-.question-part{
-    margin: 0 auto;
+.questions-part{
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    
-    
+    margin-left: 0;
 }
+
 
 .answer-block{
     display: flex;
@@ -91,11 +94,16 @@ button{
     
 }
 
-.q1{
+#q1{
     border-radius: 7.942px;
     border: 0.794px solid #4D5B9E;
     padding: 5px 15px;
-    width: auto;
+    width: 193px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: white;
+    margin: 20px;
 }
 
 .question{

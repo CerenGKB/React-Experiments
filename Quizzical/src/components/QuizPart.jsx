@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
 import Button from './Button'
+import { decode } from 'he';
 
-export default function QuizPart({questions,setQuestions}){
+export default function QuizPart({question,setQuestions}){
 
     const [options,setOptions] =useState()
     const [currentQuestion,setCurrentQuestion] = useState(0)
@@ -11,14 +12,14 @@ export default function QuizPart({questions,setQuestions}){
     const {error,setError} = useState(false)
 
     useEffect(()=>{
-        console.log(questions)
+        
 
-        setOptions(questions && handleShuffle(
-            [questions[currentQuestion]?.correct_answer,
-            ...questions[currentQuestion]?.incorrect_answers
-        ])
+        setOptions(question && handleShuffle([
+            decode(question.correct_answer),
+            ...question.incorrect_answers.map((answer) => decode(answer)),
+          ])
         )
-    },[questions])
+    },[question])
 
     console.log(options)
 
@@ -30,18 +31,17 @@ export default function QuizPart({questions,setQuestions}){
         <div className='questions=part'>
            
             <div className="question-block">
-                <div className="question">{questions[currentQuestion].question}  </div>
+                <div className="question">{question.question}  </div>
                 <div className="answer-block">
                     {options && 
                     options.map(i=>(
-                        <button className="q1">{i} </button>
+                        <button id="q1">{i} </button>
                     ))}
                
                 </div>
             </div>
             <hr/>
-           
-            <Button>Check Answers</Button>
+
         </div>
     ) 
     

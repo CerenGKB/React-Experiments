@@ -7,7 +7,8 @@ import Button  from "./components/Button.jsx"
 
 function App() {
   
-  const [questions,setQuestions] = useState()  
+  const [quizData, setQuizData] = useState([])
+
 
   async function fetchQuestions() {
     const url = 'https://opentdb.com/api.php?amount=5&type=multiple';
@@ -26,7 +27,7 @@ function App() {
   useEffect(() => {
     async function fetchQuestionsData() {
       const data = await fetchQuestions();
-      setQuestions(data);
+      setQuizData(data)
     }
 
     fetchQuestionsData();
@@ -41,7 +42,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="mainComp">
     {!displayComponent && <main>
     
     <div className="title">Quizzical</div>
@@ -51,11 +52,16 @@ function App() {
     
     </main>}
     <div className='questions'>
-    {displayComponent && 
-    <QuizPart
-      questions={questions}
-      setQuestions={setQuestions}
-    />}
+    {displayComponent && quizData.length > 0 && (
+          quizData.map((question, index) => (
+            <QuizPart
+              key={index}
+              question={question}
+              setQuizData={setQuizData}
+            />
+          ))
+        )}
+             <hr/>
     </div>
     </div>
   )
