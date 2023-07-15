@@ -1,22 +1,33 @@
 *{
     margin: 0 auto;
     background: #F5F7FB;
+    
 }
 
 
 
-
-main{
+.mainComp{
+    width: 100vw;
+    height: 100vh;
     background-image: url('images/blob 5blob2.png'),url('images/blob 5blob.png');
     background-position: right 0 top 0 , bottom 0 left 0;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    position: absolute;
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    background-image: url('images/blob 5blob2.png'),url('images/blob 5blob.png');
+    background-position: right 0 top 0 , bottom 0 left 0;
+    background-repeat: no-repeat;
  
 }
 
@@ -57,16 +68,7 @@ button{
 }
 
 
-.mainComp{
-    width: 100vw;
-    height: 100vh;
-    background-image: url('images/blob 5blob2.png'),url('images/blob 5blob.png');
-    background-position: right 0 top 0 , bottom 0 left 0;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .questions{
     margin: 0;

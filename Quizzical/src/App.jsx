@@ -49,7 +49,6 @@ function App() {
    <div className="description">Quizzical is a trivia game where you try to 5 questions at a time</div>
     <Button onStateChange={handleState}>Start</Button>
       
-    
     </main>}
     <div className='questions'>
     {displayComponent && quizData.length > 0 && (

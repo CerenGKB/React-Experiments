@@ -12,8 +12,6 @@ export default function QuizPart({question,setQuestions}){
     const {error,setError} = useState(false)
 
     useEffect(()=>{
-        
-
         setOptions(question && handleShuffle([
             decode(question.correct_answer),
             ...question.incorrect_answers.map((answer) => decode(answer)),
