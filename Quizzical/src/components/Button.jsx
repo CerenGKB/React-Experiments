@@ -12,7 +12,6 @@ export default function Button({children,onStateChange}){
         onStateChange(newState);
     }
 
-    console.log(start)
     return(
         <button onClick={toggle} >
      {children}

@@ -6,11 +6,10 @@ import { decode } from 'he';
 export default function QuizPart({question,setQuestions}){
 
     const [options,setOptions] =useState()
-    const [currentQuestion,setCurrentQuestion] = useState(0)
 
-    const [selected,setSelected] = useState()
-    const {error,setError} = useState(false)
-
+    const [selectedAnswer, setSelectedAnswer] = useState('');
+    const [isCorrect, setIsCorrect] = useState(false);
+    
     useEffect(()=>{
         setOptions(question && handleShuffle([
             decode(question.correct_answer),
@@ -25,16 +24,38 @@ export default function QuizPart({question,setQuestions}){
         return selection.sort(() => Math.random() - 0.5)
     }
 
+    const handleAnswerClick = (answer) => {
+        if (answer === decode(question.correct_answer)) {
+          setIsCorrect(true);
+        } else {
+          setIsCorrect(false);
+
+        }
+        setSelectedAnswer(answer);
+      };
+
     return  (
         <div className='questions=part'>
-           
             <div className="question-block">
                 <div className="question">{question.question}  </div>
                 <div className="answer-block">
-                    {options && 
-                    options.map(i=>(
-                        <button id="q1">{i} </button>
-                    ))}
+                {options &&
+            options.map((answer, index) => (
+              <button 
+                key={index}
+                className={
+                  selectedAnswer === answer
+                    ? isCorrect
+                      ? 'green'
+                      : 'red'
+                    : ''
+                }
+                disabled={selectedAnswer !== ''}
+                onClick={() => handleAnswerClick(answer)}
+              >
+                {answer}
+              </button>
+            ))}
                
                 </div>
             </div>

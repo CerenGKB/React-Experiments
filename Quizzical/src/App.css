@@ -32,7 +32,15 @@ main{
 }
 
 
-
+button.green {
+    background-color: green;
+    color: white;
+  }
+  
+  button.red {
+    background-color: red;
+    color: white;
+  }
 
 
 
@@ -57,6 +65,18 @@ main{
     line-height: normal;
 }
 
+
+.q1{
+    border-radius: 7.942px;
+    border: 0.794px solid #4D5B9E;
+    padding: 5px 15px;
+    width: 193px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: white !important;
+    margin: 20px; 
+}
 
 button{
     width: 193px;
@@ -96,17 +116,6 @@ button{
     
 }
 
-#q1{
-    border-radius: 7.942px;
-    border: 0.794px solid #4D5B9E;
-    padding: 5px 15px;
-    width: 193px;
-    height: 52px;
-    flex-shrink: 0;
-    border-radius: 15px;
-    background: white;
-    margin: 20px;
-}
 
 .question{
     display: flex;
