@@ -68,7 +68,7 @@ function App() {
         <Button onChange={toggle}>Start</Button>
       
       </main>}
-
+     
   {displayComponent && <div className='mainQuestionsPart'>
       <div className='questions'>
         {displayComponent && quizData.length > 0 && (
