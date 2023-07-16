@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
 import Button from './Button'
-import { decode } from 'he';
+import { decode } from 'he'
 
 export default function QuizPart({question,setQuestions ,  refreshQuiz}){
 
