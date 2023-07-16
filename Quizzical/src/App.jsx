@@ -8,7 +8,9 @@ import Button  from "./components/Button.jsx"
 function App() {
   
   const [quizData, setQuizData] = useState([])
-
+  const [start, setStart] = React.useState(false)
+  const [displayComponent, setDisplayComponent] = useState(false)
+  const [ refreshQuiz, setRefreshQuiz ] = useState(false)
 
   async function fetchQuestions() {
     const url = 'https://opentdb.com/api.php?amount=5&type=multiple';
@@ -24,45 +26,69 @@ function App() {
     }
   }
   
+ 
+  function toggle(){
+    const newState = !start;
+    setStart(newState);
+    setDisplayComponent(true)
+    setRefreshQuiz(true)
+}
+
+
   useEffect(() => {
     async function fetchQuestionsData() {
       const data = await fetchQuestions();
       setQuizData(data)
+      setRefreshQuiz(false)
     }
+    if (refreshQuiz) {
+      fetchQuestionsData();
+    }
+ 
+  }, [refreshQuiz]);
 
-    fetchQuestionsData();
-  }, []);
 
 
-  
-  const [displayComponent, setDisplayComponent] = useState(false)
 
-  function handleState(newState){
-    setDisplayComponent(newState)
+  function handlePlayAgain(){
+    setRefreshQuiz(true)
+    setDisplayComponent(true)
+    
   }
+
 
   return (
     <div className="mainComp">
-    {!displayComponent && <main>
-    
-    <div className="title">Quizzical</div>
-   <div className="description">Quizzical is a trivia game where you try to 5 questions at a time</div>
-    <Button onStateChange={handleState}>Start</Button>
+
+      {!displayComponent && <main>
+        <div className="title">Quizzical 
+          </div>
+        <div className="description">Quizzical is a trivia game where you try to 5 questions at a time
+          </div>
+        <Button onChange={toggle}>Start</Button>
       
-    </main>}
-    <div className='questions'>
-    {displayComponent && quizData.length > 0 && (
+      </main>}
+
+  {displayComponent && <div className='mainQuestionsPart'>
+      <div className='questions'>
+        {displayComponent && quizData.length > 0 && (
           quizData.map((question, index) => (
             <QuizPart
               key={index}
               question={question}
-              setQuizData={setQuizData}
+              setQuestions={setQuizData}
+              refreshQuiz={refreshQuiz}
             />
           ))
         )}
-             <hr/>
+        <hr/>
+       
+      </div>
+      <Button onChange={handlePlayAgain}>Play Again</Button>
     </div>
+     }
     </div>
+ 
   )
 }
 

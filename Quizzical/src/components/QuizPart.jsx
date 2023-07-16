@@ -3,7 +3,7 @@ import { useState,useEffect } from 'react'
 import Button from './Button'
 import { decode } from 'he';
 
-export default function QuizPart({question,setQuestions}){
+export default function QuizPart({question,setQuestions ,  refreshQuiz}){
 
     const [options,setOptions] =useState()
 
@@ -18,7 +18,12 @@ export default function QuizPart({question,setQuestions}){
         )
     },[question])
 
-    console.log(options)
+
+    useEffect(() => {
+        setSelectedAnswer('');
+        setIsCorrect(false);
+      }, [refreshQuiz]);
+    
 
     const handleShuffle = (selection) => {
         return selection.sort(() => Math.random() - 0.5)
@@ -41,7 +46,7 @@ export default function QuizPart({question,setQuestions}){
                 <div className="answer-block">
                 {options &&
             options.map((answer, index) => (
-              <button 
+              <button id='q1'
                 key={index}
                 className={
                   selectedAnswer === answer

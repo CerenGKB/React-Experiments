@@ -2,18 +2,12 @@ import React from "react"
 
 
 
-export default function Button({children,onStateChange}){
+export default function Button({children,onChange}){
 
-    const [start, setStart] = React.useState(false)
-    
-    function toggle(){
-        const newState = !start;
-        setStart(newState);
-        onStateChange(newState);
-    }
 
+   
     return(
-        <button onClick={toggle} >
+        <button onClick={onChange} >
      {children}
         </button>
     )
