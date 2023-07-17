@@ -15,17 +15,6 @@ function App() {
   async function fetchQuestions() {
     const url = 'https://opentdb.com/api.php?amount=5&type=multiple';
   
-  /*   try {
-      const response = await fetch(url);
-      const data = await response.json();
-      return data.results;
-    } catch (error) {
-      console.error('Error fetching questions:', error);
-      return [];
-  
-    }
-  }
-   */
   try {
     const response = await fetch(url);
     const data = await response.json();
