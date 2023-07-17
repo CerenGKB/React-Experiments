@@ -3,7 +3,7 @@ import React from 'react'
 import './App.css'
 import QuizPart from "./components/QuizPart"
 import Button  from "./components/Button.jsx"
-
+import { decode } from 'he';
 
 function App() {
   
@@ -15,7 +15,7 @@ function App() {
   async function fetchQuestions() {
     const url = 'https://opentdb.com/api.php?amount=5&type=multiple';
   
-    try {
+  /*   try {
       const response = await fetch(url);
       const data = await response.json();
       return data.results;
@@ -25,7 +25,31 @@ function App() {
   
     }
   }
-  
+   */
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    
+    // Decode the entire question object and its properties
+    const decodedData = data.results.map((question) => {
+      const decodedQuestion = decode(question.question);
+      const decodedCorrectAnswer = decode(question.correct_answer);
+      const decodedIncorrectAnswers = question.incorrect_answers.map(answer => decode(answer));
+      
+      return {
+        ...question,
+        question: decodedQuestion,
+        correct_answer: decodedCorrectAnswer,
+        incorrect_answers: decodedIncorrectAnswers,
+      };
+    });
+
+    return decodedData;
+  } catch (error) {
+    console.error('Error fetching questions:', error);
+    return [];
+  }
+}
  
   function toggle(){
     const newState = !start;
