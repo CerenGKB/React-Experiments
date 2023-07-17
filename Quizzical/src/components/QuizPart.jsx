@@ -45,21 +45,24 @@ export default function QuizPart({question,setQuestions ,  refreshQuiz}){
                 <div className="question">{question.question}  </div>
                 <div className="answer-block">
                 {options &&
-            options.map((answer, index) => (
-              <button id='q1'
-                key={index}
-                className={
-                  selectedAnswer === answer
-                    ? isCorrect
-                      ? 'green'
-                      : 'red'
-                    : ''
-                }
-                disabled={selectedAnswer !== ''}
-                onClick={() => handleAnswerClick(answer)}
-              >
-                {answer}
-              </button>
+                   options.map((answer, index) => (
+                    <button
+                    id="q1"
+                    key={index}
+                    className={
+                      selectedAnswer === answer
+                        ? isCorrect
+                          ? 'green'
+                          : 'red'
+                        : answer === decode(question.correct_answer) && selectedAnswer !== ''
+                        ? 'green'
+                        : ''
+                    }
+                    disabled={selectedAnswer !== ''}
+                    onClick={() => handleAnswerClick(answer)}
+                  >
+                    {answer}
+                  </button>
             ))}
                
                 </div>
