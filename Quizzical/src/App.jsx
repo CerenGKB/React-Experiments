@@ -80,26 +80,25 @@ function App() {
           </div>
         <Button onChange={toggle}>Start</Button>
       
-      </main>}
+        </main>}
      
-  {displayComponent && <div className='mainQuestionsPart'>
-      <div className='questions'>
-        {displayComponent && quizData.length > 0 && (
-          quizData.map((question, index) => (
-            <QuizPart
+      {displayComponent && <div className='mainQuestionsPart'>
+        <div className='questions'>
+          {displayComponent && quizData.length > 0 && (
+            quizData.map((question, index) => (
+              <QuizPart
               key={index}
               question={question}
               setQuestions={setQuizData}
               refreshQuiz={refreshQuiz}
             />
-          ))
-        )}
-        <hr/>
-       
-      </div>
+         ))
+      )}       
+        </div>
       <Button onChange={handlePlayAgain}>Play Again</Button>
-    </div>
-     }
+
+      </div>}
+      
     </div>
  
   )

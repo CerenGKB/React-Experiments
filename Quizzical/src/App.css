@@ -84,12 +84,10 @@ button.red {
   }
 
 
-
-
 .questions{
     margin: 0;
-    width:800px;
-    height: 800px;
+    width: fit-content;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -102,6 +100,7 @@ button.red {
     align-items: flex-start;
     justify-content: flex-start;
     margin-left: 0;
+    border-bottom: 2px solid  #DBDEF0;
 }
 
 
@@ -128,4 +127,26 @@ button.red {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0;
 }
+
+@media only screen and (max-width: 600px) {
+    *{
+        width: 100vw;
+        height: 100vw;
+    }
+    .answer-block{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+    }
+    .question-block{
+        display: flex;
+        flex-direction: column;
+    }
+    .questions-part{
+        display: flex;
+        flex-direction: column;
+    }
+  }
