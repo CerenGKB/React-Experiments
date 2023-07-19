@@ -10,7 +10,7 @@ In this app i added these features :
 
 These are the things i learnt during building this :
 
-- Reading Code  <br />
+- Improving Reading Code  <br />
   >Not all of the code was written by only me so it was challenging to understand the full code before implementing features
 - useEffect
    > First thing i needed to implement was updating notes that were being written.So i learnt useEffect for syncing and its dependencies for preventing it being called everytime.I also learnt lazy state initialization with states for the same reason
