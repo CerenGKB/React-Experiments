@@ -2,6 +2,8 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 import Button from './Button'
 import { decode } from 'he'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 export default function QuizPart({question,setQuestions ,  refreshQuiz}){
 
@@ -46,8 +48,11 @@ export default function QuizPart({question,setQuestions ,  refreshQuiz}){
               </div>
                   
               <div className="answer-block">
+
+
                     {options &&
                       options.map((answer, index) => (
+                        
                       <button
                           id="q1"
                           key={index}
