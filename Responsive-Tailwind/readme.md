@@ -1,0 +1,1 @@
+A small landing page with only nav and hero section i created while learning tailwind
