@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css'
 import {BrowserRouter, Routes , Route, Link} from "react-router-dom"
-import About from './components/About'
+import Home from './components/Home'
 import Vans from './components/Vans'
-
+import About from './components/About'
 
 function App() {
  
@@ -16,14 +16,14 @@ function App() {
     #VANLIFE
     </div>
     <div className='flex mr-4 gap-10 items-center text-xl'>
-    <Link to="/">Vans  </Link>  
     <Link to="/about">About </Link>
+    <Link to="/vans">Vans </Link>
     </div>
     </nav>
 
     <Routes>
+    <Route path="/" element={<Home />} />
     <Route path="/about" element={<About />} />
-    <Route path="/" element={<Vans />} />
      </Routes>
    
     </BrowserRouter> 
