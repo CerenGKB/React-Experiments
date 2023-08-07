@@ -8,6 +8,7 @@ module.exports= {
       },
       colors: {
         'ftColor' : '#252525',
+        'btnColor' : '#FF8C38',
       }
     },
   },
