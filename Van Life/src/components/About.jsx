@@ -2,7 +2,9 @@ import React from "react";
 
 const About = () => {
     return (
-        <p>about</p>
+    <div className="w-full h-[80vh] flex flex-col">
+    <div className="h-[40vh] bg-cover bg-no-repeat bg-vanNight"></div>
+    </div>
     )
 }
 

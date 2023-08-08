@@ -5,6 +5,7 @@ module.exports= {
     extend: {
       backgroundImage :{
         'tent' : 'url("./images/background.png")'  , 
+        'vanNight' : 'url(./images/vanight.png)'
       },
       colors: {
         'ftColor' : '#252525',
