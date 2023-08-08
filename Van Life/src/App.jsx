@@ -12,7 +12,7 @@ function App() {
     <main className='m-0 p-0 flex flex-col h-screen'>
     <BrowserRouter>
     <nav className='py-10  w-full flex flex-shrink-0 justify-between p-4'>
-    <div className='text-3xl font-bold'>
+    <div className='sm:text-3xl text-2xl font-bold'>
     #VANLIFE
     </div>
     <div className='flex mr-4 gap-10 items-center text-xl'>
