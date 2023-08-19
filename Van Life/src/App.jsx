@@ -1,15 +1,19 @@
 import React from 'react';
 import './App.css'
 import {BrowserRouter, Routes , Route, Link} from "react-router-dom"
+
+//Pages
 import Home from './components/Home'
 import Vans from './components/Vans'
 import About from './components/About'
+import VanDetail from './components/VanDetail'
+
+//fake API
 import "./server"  
 
 
 
-function App() {
- 
+function App() { 
 
   return (
     <main className='m-0 p-0 flex flex-col h-screen'>
@@ -29,6 +33,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/vans" element={<Vans />} />
+          <Route path="/vans/:id" element={<VanDetail />} />
         </Routes>
 
       </BrowserRouter> 
