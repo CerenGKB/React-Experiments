@@ -3,7 +3,8 @@ import React from "react"
 
 const VanDetail = () => {
     return(
-        <p>HELo</p>
+        // this line will have details from miragejs data
+        <p></p>
     )
 }
 
