@@ -7,6 +7,7 @@ import Home from './components/Home'
 import Vans from './components/Vans'
 import About from './components/About'
 import VanDetail from './components/VanDetail'
+import Layout from './pages/Layout'
 
 //fake API
 import "./server"  
@@ -18,22 +19,13 @@ function App() {
   return (
     <main className='m-0 p-0 flex flex-col h-screen'>
       <BrowserRouter>
-        <nav className='py-10  w-full flex flex-shrink-0 justify-between p-4'>
-          <div className='sm:text-3xl text-2xl font-bold'>
-          <Link to="/">#VANLIFE </Link>
-
-          </div>
-          <div className='flex mr-4 gap-10 items-center text-xl'>
-          <Link to="/about">About </Link>
-          <Link to="/vans">Vans </Link>
-          </div>
-        </nav>
-
         <Routes>
+          <Route element={<Layout/>}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/vans" element={<Vans />} />
           <Route path="/vans/:id" element={<VanDetail />} />
+          </Route>
         </Routes>
 
       </BrowserRouter> 
