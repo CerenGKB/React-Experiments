@@ -10,6 +10,7 @@ export default function Header(){
 
         </div>
         <div className='flex mr-4 gap-10 items-center text-xl'>
+        <Link to="/host">Host </Link>
         <Link to="/about">About </Link>
         <Link to="/vans">Vans </Link>
         </div>
