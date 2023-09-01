@@ -8,6 +8,10 @@ import Vans from './components/Vans'
 import About from './components/About'
 import VanDetail from './components/VanDetail'
 import Layout from './pages/Layout'
+import Host from './components/Host'
+import Income from './components/Income'
+import Reviews from './components/Reviews'
+
 
 //fake API
 import "./server"  
@@ -25,6 +29,9 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/vans" element={<Vans />} />
           <Route path="/vans/:id" element={<VanDetail />} />
+          <Route path="/Host" element={<Host />} />
+          <Route path="/Income" element={<Income />} />
+          <Route path="/Reviews" element={<Reviews />} />
           </Route>
         </Routes>
 
