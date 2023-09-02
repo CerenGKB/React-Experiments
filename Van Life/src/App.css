@@ -15,6 +15,14 @@
     margin-top: 57px;
 }
 
+
+a.active-link {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #161616;
+}
+
+
 .van-tile a {
     color: #161616;
     text-decoration: none;    

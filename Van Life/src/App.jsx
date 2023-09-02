@@ -2,18 +2,22 @@ import React from 'react';
 import './App.css'
 import {BrowserRouter, Routes , Route, Link} from "react-router-dom"
 
-//Pages
+//Components
 import Home from './components/Home'
 import Vans from './components/Vans'
 import About from './components/About'
 import VanDetail from './components/VanDetail'
-import Layout from './pages/Layout'
 import Dashboard from './components/Dashboard'
 import Income from './components/Income'
 import Reviews from './components/Reviews'
-import DashboardLayout from './pages/DashboardLayout';
+import HostVans from './pages/HostVans'
+import HostVanDetail from './pages/HostVanDetail'
 
-//fake API
+//Pages
+import Layout from './pages/Layout'
+import DashboardLayout from './pages/DashboardLayout'
+
+//fake API with miragejs
 import "./server"  
 
 
@@ -24,14 +28,18 @@ function App() {
     <main className='m-0 p-0 flex flex-col h-screen'>
       <BrowserRouter>
         <Routes>
-          <Route element={<Layout/>}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/vans" element={<Vans />} />
-            <Route path="/vans/:id" element={<VanDetail />} />
-            <Route path="/host" element={<DashboardLayout />}>
-              <Route path="/host/income" element={<Income />} />
-              <Route path="/host/reviews" element={<Reviews />} />
+          <Route path="/" element={<Layout/>}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="vans" element={<Vans />} />
+            <Route path="vans/:id" element={<VanDetail />} />
+            
+            <Route path="host" element={<DashboardLayout />}>
+              <Route index element={<Dashboard />} />
+              <Route path="income" element={<Income />} />
+              <Route path="reviews" element={<Reviews />} />
+              <Route path="vans" element={<HostVans />} />
+              <Route path="vans/:id" element={<HostVanDetail />} />
             </Route>
           </Route>
         </Routes>
