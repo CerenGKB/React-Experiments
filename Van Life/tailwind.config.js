@@ -4,8 +4,8 @@ module.exports= {
   theme: {
     extend: {
       backgroundImage :{
-        'tent' : 'url("./images/background.png")'  , 
-        'vanNight' : 'url(./images/vanight.png)'
+        'tent' : 'url("./src/images/background.png")'  , 
+        'vanNight' : 'url(./src/images/vanight.png)'
       },
       colors: {
         'ftColor' : '#252525',
